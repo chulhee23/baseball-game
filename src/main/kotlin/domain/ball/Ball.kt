@@ -1,7 +1,6 @@
-package ball
-import kotlin.random.Random
+package domain.ball
 
-class Ball private constructor(
+data class Ball(
     val first: Int,
     val second: Int,
     val third: Int,
@@ -9,7 +8,7 @@ class Ball private constructor(
 
     companion object {
         private const val MAX_NUM = 10
-        fun createNew() : Ball {
+        fun createRandom() : Ball {
             val candidates = mutableListOf(1,2,3,4,5,6,7,8,9)
 
             return Ball(
