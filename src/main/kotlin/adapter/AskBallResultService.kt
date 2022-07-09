@@ -7,8 +7,12 @@ import domain.ports.inbound.AskBallResultToPlayerUseCase
 
 class AskBallResultService : AskBallResultToPlayerUseCase {
     override fun execute(player: Player, askBall: Ball): AskBallResult {
+        println("당신의 공은 $askBall 입니까?")
+        Thread.sleep(500)
         val (strikeCount, ballCount) = compareBalls(player.ball, askBall)
-        return AskBallResult(ballCount = ballCount, strikeCount = strikeCount)
+        return AskBallResult(ballCount = ballCount, strikeCount = strikeCount).also {
+            println("결과는 $it 입니다.")
+        }
     }
 
     private fun compareBalls(ball: Ball, askBall: Ball): Pair<Int, Int> {

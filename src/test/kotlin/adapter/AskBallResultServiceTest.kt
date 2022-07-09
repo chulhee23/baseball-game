@@ -19,7 +19,7 @@ internal class AskBallResultServiceTest : FunSpec({
         ).also { println(it) }
 
 
-        val ball_1 = Ball(2,4,5)
+        val ball_1 = Ball(6,3,5)
         val strike_1 = Ball(1,4,5)
         val ball_1_strike_1 = Ball(1,3,5)
         val ball_3 = Ball(3,1,2)
